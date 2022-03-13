@@ -1,13 +1,13 @@
  
 
-**User story**
+**User story** :information_desk_person:
 	
 
-#1.1 (1er sprint -> 17/3/22) 
+#1.1 (1er sprint -> 17/3/22)</br>
 
 **En tant que**
 	
-Gestionnaire de donnée 
+Gestionnaire de donnée </br>
 
 **Je veux**
 
@@ -21,10 +21,10 @@ Administrer une base de données de LifeMomentSequence. La BDD contient la liste
 
  - liste_de_tags (vide au départ) 
 
- - le CSV de Skeleton associé (directement dans la base ou sous la forme d’un chemin vers un fichier stocké quelque part) 
+ - le CSV de Skeleton associé (directement dans la base ou sous la forme d’un chemin vers un fichier stocké quelque part) </br>
  
 
-**Afin que**
+**Afin que** :trollface:
 
 Stocker les données posturales sous une forme interrogeable. 
 
