@@ -1,4 +1,3 @@
- 
 
 **User story** :information_desk_person:
 	
@@ -29,4 +28,7 @@ Administrer une base de données de LifeMomentSequence. La BDD contient la liste
 
 Stocker les données posturales sous une forme interrogeable. 
 
- 
+Le BBD en format:
+```json
+   JSON
+```
