@@ -2,14 +2,15 @@
 
 **User story** :information_desk_person:
 	
-
 #1.1 (1er sprint -> 17/3/22)</br>
+
 
 **En tant que**
 	
 Gestionnaire de donnée </br>
 
-**Je veux**
+
+**Je veux**- ![#f03c15](Administrer une base de données de LifeMomentSequence. La BDD contient la liste des différentes LifeMomentSequence et les métadonnées associées suivantes ) `#f03c15`
 
 Administrer une base de données de LifeMomentSequence. La BDD contient la liste des différentes LifeMomentSequence et les métadonnées associées suivantes :  
 
