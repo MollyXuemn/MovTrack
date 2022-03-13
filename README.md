@@ -6,11 +6,11 @@
 
 
 **En tant que**
-	
+<font color=#00ffff size=72>color=#00ffff</font>
 Gestionnaire de donnée </br>
 
 
-**Je veux**- ![#f03c15](Administrer une base de données de LifeMomentSequence. La BDD contient la liste des différentes LifeMomentSequence et les métadonnées associées suivantes ) `#f03c15`
+**Je veux**
 
 Administrer une base de données de LifeMomentSequence. La BDD contient la liste des différentes LifeMomentSequence et les métadonnées associées suivantes :  
 
