@@ -1,11 +1,11 @@
 
 **User story** :information_desk_person:
 	
-#1.1 (1er sprint -> 17/3/22)</br>
+1.1 (1er sprint -> 17/3/22)</br>
 
 
 **En tant que**
-<font color=#00ffff size=72>color=#00ffff</font>
+
 Gestionnaire de donnée </br>
 
 
@@ -30,5 +30,9 @@ Stocker les données posturales sous une forme interrogeable.
 
 Le BBD en format:
 ```json
-   JSON
+{
+   "camera_id" : 
+   "individual_id" :
+   "liste_de_tags": -t immobile
+}
 ```
