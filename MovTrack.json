@@ -1,5 +1,10 @@
 /* filename:
-/var/Data_HUT1/per_month/2020-05/data_1114_2020-05-01_04h20_clean.csv */
+/var/Data_HUT1/per_month/2020-05/data_1114_2020-05-01_04h20_clean.csv
+[{'c':[int cameraID,...], 
+   'i':int maxNumberOfPersonInSequence, 
+   's': str StartTimestamp, 
+   'e': str EndTimestamp},...] */
+
 
 [
     {
