@@ -38,32 +38,43 @@ add donnée précédente dans tableau"
 """
 nomfichier="test.txt" 
 last_line=""
+import os
 """
 charge le fichier en question, ecrit en derniere ligne une étoile si dejàn chargé
 """
-def chargement(nomfichier):
-    with open('nomfichier', 'w') as f:
+def chargement(nomfichier, path_to_destination):
+    os.chdir(path_to_destination)
+
+    with open(nomfichier, 'r+') as f:
+
         last_line = f.readlines()[-1]
         if last_line=="*":
-            nomfichier.close
+            f.close
             pass
         else:
-            nomfichier.writelines("*")[-1]
-            nomfichier.close
+            f.write("\n*")
+            f.close
             pass
 pass
 """
 charge le dossier en question
 """
-def chargerdossier(nomdossier):
-    import os
-    absolutepath=""
-    path = 'absolute path'
-    dir_list = os.listdir(path)
-    for i in range(len.dir_list):
-        chargement(dir_list[i])
+def chargerdossier():
+
+    
+    path='D:/source/notre travail/MovTrack/tests jt fonction 1'
+    
+    file_to_search = os.listdir(path)
+    print(file_to_search)
+    for i in range(len(file_to_search)):
+        chargement(file_to_search[i],path)
         pass     
 pass
 """
 
+"""
+chargerdossier()
+
+
+"""
 """
