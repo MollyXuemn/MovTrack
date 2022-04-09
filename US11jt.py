@@ -64,36 +64,45 @@ import datetime
     #traitement des données, afin éviter les doublons
     #with list_dir('/source/notre travail/',list_csv) as f:
 def US11():
-    with open("data_1117_2020-03-12_11h08.csv")  as f:
+    with open("nouveau 6.txt")  as f:
         line = f.readline().rstrip()
             #regarde la ligne l
-        line1= f.readline().rstrip()[1]
+        line1= f.readline().rstrip()[1:]
+
             #regarde la ligne l+1
         vraiecoordonnee=[]
-            
+        g=0
         while line:
+        #while len(vraiecoordonnee)<8000:
+            #print('on est dans la boucle')
             elmtligne=re.split(",", line)
             elmtligne1=re.split(",", line1)
             #coordonnées ligne 1 et0
-            vraiecoordonnee=[line]
+            #vraiecoordonnee=[line]
             #print(type(elmtligne[1]))
             print(elmtligne[1])
-            print(elmtligne1[1])
+            #print(elmtligne1[1])
             d=elmtligne[1]
             d1=elmtligne1[1]
+            #print(d)
             time=int(d[12:13])
+            #print(d[12:13])
             time1=int(d1[12:13])
             time_delta = time1 - time
-            delta_in_seconds = time_delta.total_seconds()
-            delta_in_minutes = delta_in_seconds / 60.
-            if delta_in_minutes>1:
-                vraiecoordonnee.extend(line1)
-            # if getDifference(elmtligne[1],elmtligne1[1])[4]>1:
+            #delta_in_seconds = time_delta.total_seconds()
+            delta_in_minutes = time_delta / 60.
+            if delta_in_minutes<1:
+                vraiecoordonnee.append(line1)
+                print('on est dans la boucle')
+            #if getDifference(elmtligne[1],elmtligne1[1])[4]>1:
             #     #si la durée entre deux mesure est supérieure à 1 minute
             #     vraiecoordonnee.extend(line1)
-            # if elmtligne[0] !=elmtligne1[0]:
+            #print(elmtligne[0])
+            if elmtligne[0] !=elmtligne1[0]:
             #     #si on change utilisateur
-            #     vraiecoordonnee.extend(line1)           
+               vraiecoordonnee.extend(line1) 
+            g=g+1
+            print(g)
         line = f.readline().rstrip()
     f.close()
     frames = []
