@@ -3,8 +3,17 @@
 Created on Fri Apr  8 21:05:28 2022
 
 @author: jeremy
+
 """
-def US11():
+import re
+import math
+import numpy as np
+import pandas as pd
+import os
+import json
+import time
+import datetime 
+
 
     # i=0
     # d=0
@@ -14,13 +23,10 @@ def US11():
     #     d.extend(listdist)
 
     # print(listdist)
-    import re
-    import math
-    import numpy as np
-    import pandas as pd
-    import os
+
     # 遍历当前所有文件夹
     #boucle dans tous les dossiers actuels
+"""
     list_csv=[]
     def list_dir(file_dir,list_csv):
         dir_list = os.listdir(file_dir)
@@ -44,8 +50,8 @@ def US11():
                 list_dir(path,list_csv)
                 
         return list_csv
-
-    list_dir('/var/Data_HUT1/2019',list_csv)
+    list_dir('/source/notre travail/',list_csv)
+    #list_dir('/var/Data_HUT1/2019',list_csv)
     frames = []
     for i in list_csv:
         try:
@@ -54,31 +60,44 @@ def US11():
             print('done')
         except:
             continue
-     
+"""
     #traitement des données, afin éviter les doublons
-    with list_dir as f:
+    #with list_dir('/source/notre travail/',list_csv) as f:
+def US11():
+    with open("data_1117_2020-03-12_11h08.csv")  as f:
         line = f.readline().rstrip()
-        #regarde la ligne l
+            #regarde la ligne l
         line1= f.readline().rstrip()[1]
-        #regarde la ligne l+1
-        vraiecoordonnée=[]
-        
+            #regarde la ligne l+1
+        vraiecoordonnee=[]
+            
         while line:
             elmtligne=re.split(",", line)
             elmtligne1=re.split(",", line1)
             #coordonnées ligne 1 et0
-            vraiecoordonnée=[line]
-            
-            if getDifference(elmtligne[1],elmtligne1[1])[4]>1:
-                #si la durée entre deux mesure est supérieure à 1 minute
-                vraiecoordonnée.extend(line1)
-            if elmtligne[0] !=elmtligne1[0]:
-                #si on change utilisateur
-                vraiecoordonnée.extend(line1)           
+            vraiecoordonnee=[line]
+            #print(type(elmtligne[1]))
+            print(elmtligne[1])
+            print(elmtligne1[1])
+            d=elmtligne[1]
+            d1=elmtligne1[1]
+            time=int(d[12:13])
+            time1=int(d1[12:13])
+            time_delta = time1 - time
+            delta_in_seconds = time_delta.total_seconds()
+            delta_in_minutes = delta_in_seconds / 60.
+            if delta_in_minutes>1:
+                vraiecoordonnee.extend(line1)
+            # if getDifference(elmtligne[1],elmtligne1[1])[4]>1:
+            #     #si la durée entre deux mesure est supérieure à 1 minute
+            #     vraiecoordonnee.extend(line1)
+            # if elmtligne[0] !=elmtligne1[0]:
+            #     #si on change utilisateur
+            #     vraiecoordonnee.extend(line1)           
         line = f.readline().rstrip()
     f.close()
-    
-    for i in vraiecoordonnée:
+    frames = []
+    for i in vraiecoordonnee:
         try:
             print(i)
             frames.append(pd.read_csv(i))
@@ -100,12 +119,13 @@ def US11():
     def writejsonfile(file):
       with open (str(file)+'.json','w') as f:
         f.write(js)
-    writejsonfile(MovTrack)
-
+    #writejsonfile(MovTrack.json)
+    
+US11()
 from datetime import datetime
 
-def getDifference(then, now = datetime.now(), interval = "secs"):
-
+#def getDifference(then, now = datetime.now(), interval = "secs"):
+def getDifference(then, now = datetime.now()):
     duration = now - then
     duration_in_s = duration.total_seconds() 
     
@@ -136,4 +156,4 @@ def getDifference(then, now = datetime.now(), interval = "secs"):
         'hrs': int(hrs()),
         'mins': int(mins()),
         'secs': int(secs())
-    }[interval]
+    }
