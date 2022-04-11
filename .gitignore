@@ -1,0 +1,24 @@
+#Exclude data directory
+/images_videos
+/KinectHut/KinectHut/obj/Debug
+/KinectHut/KinectHut/obj/Release
+/KinectHut/KinectHut/bin/Debug
+/code_acquisition_kinect/.vs
+
+**/**.user
+**/**.vsp
+
+**/__pycache__/**
+.idea
+**/.pytest_cache/**
+
+**/**~
+
+#Exclude the pickle files of the skeleton (CLInect_lib.py)
+**/**.skel
+**/**.skel_v2
+**/output**.png
+PyKinectHut/.DS_Store
+.DS_Store
+.vscode/.ropeproject/objectdb
+.vscode/.ropeproject/config.py
